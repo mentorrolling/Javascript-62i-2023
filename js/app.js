@@ -1,68 +1,41 @@
-// alert("Bienvenidos a javascript desde un archivo js 🤓")
-
-//Variables: declaración e inicialización
-
-var alumnoPreferido = "Luciano"; // ya no se usa
-
-let mentor = "Ariel"; //declarar variables comunes
-
-const COMISION_ACTIVA = "62i"; //declarar variables constantes que no deberían cambiar
-
-const PI = 3.1416;
-
-//Nombrar variables
-//SNAKE_CASE -> Constantes
-//camelCase -> Variables comunes
-//PascalCase -> Componentes
-let MejorAlumnaDeLaMañana = "";
-
-// -----------------------
-// 1° Caracteres aceptados
-//--------------------------
-// letras del alfabeto en ingles mayúsculas como minúsculas
-// números del 0 al 9
-// signos '$' y '_'
-
-// 2° no podemos iniciar con un número
-
-// 3° no se pueden usar palabras reservadas
-
-//tipos de datos
-
-// Number
-let numeroPositivo = 34;
-let numeroNegativo = -500;
-let numeroDecimal = 56.89;
-
 //String
-let academia = "RollingCode";
-let numeroString = "22";
-let stringVacio = "";
+let nombre = "José";
+let apellido = "FERNANDEZ";
+let frase = "              Bienvenidos a la clase           ";
 
-//Bolean
-let comprar = true;
-let comerEnCasa = false;
+//concatenación
+console.log(nombre + " " + apellido);
+console.log(nombre, apellido);
 
-//Undefined
-let cosita;
+//Template String
+console.log(`Mi nombre es ${nombre} ${apellido}`);
 
-//Null (vacio)
-let billeteraDePablo = null;
+//métodos propiedades
+console.log(nombre.toUpperCase());
+console.log(apellido.toLowerCase());
+console.log("El apellido tiene " + apellido.length + " Caracteres");
 
-//NaN (Not a Number)
-console.log(
-  "La suma de un número con un undefined es",
-  numeroPositivo + cosita
-);
+//eliminar los espacios delante y detrás de un string
+let fraseSinEspacio = frase.trim();
 
-//Arreglos o Arrays
-let alumnos = ["Jimena", "Luciano", "Pablo"];
-let numeros = [23, 56, 789, 1000];
-let cualquierCosa = ["Juan", 456, ["Perro", "Gato", "Pato"]];
+//si quiero quitar los espacios en blanco del medio
+let sinEspacio = fraseSinEspacio.split(" ");
+console.log(sinEspacio.join(""));
 
-//Objetos
-let persona = {
-  nombre: "Agustina",
-  apellido: "Gonzalez",
-  edad: 23,
-};
+//obtener una o varias letras
+console.log(apellido.at(0));
+console.log(apellido.at(-1));
+
+console.log(apellido.substring(2, 6));
+
+// Tarea 1
+// ------------
+// 1 - ingreso el apellido
+// 2 - calcular cantidad de caracteres
+// 3 - obtener la última letra del apellido
+
+// Tarea 2
+// ------------
+// Dada la siguiente palabra "marmota"
+// 1 - Pasarla a mayuscula
+// 2 - Capitalizar la palabra (Marmota)
