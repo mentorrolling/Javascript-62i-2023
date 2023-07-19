@@ -62,3 +62,19 @@ const obtenerNombresPorLetra = (letra) => {
 
   return nombres;
 };
+
+// Tarea 3
+// ----------
+// Tomar una lista de lenguajes de programación y mostrar en consola una lista ordenada con los nombres ordenados alfabéticamente y en mayúsculas sin mutar el arreglo original.
+let lenguajes = ["javascript", "python", "c++", "c#", "java", ".net"];
+let lenguajesOrdenados = lenguajes.slice(0);
+
+const ordenarLenguajes = () => {
+  lenguajesOrdenados.sort().forEach((lenguaje, index) => {
+    console.log(`${index + 1} - ${lenguaje}`);
+  });
+};
+
+const agregarLenguajes = (lenguaje = prompt("Ingrese el nuevo lenguaje")) => {
+  lenguajesOrdenados.push(lenguaje.toUpperCase());
+};
