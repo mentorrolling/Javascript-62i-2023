@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col">
+          <h1>DOM: <b>D</b>ocument <b>O</b>bject <b>M</b>odel</h1>
+        </div>
+      </div>
+      <div class="row my-3">
+        <div id="nodoPadre" class="col-12">
+          <h3>Elementos del DOM</h3>
+          <h4>Párrafos</h4>
+          <p id="parrafo1">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+            cupiditate necessitatibus adipisci eius aliquam repudiandae ratione
+            dolore magni, animi sapiente.
+          </p>
+          <p id="parrafo2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
+            delectus dolorum perferendis reprehenderit quo! Animi debitis autem
+            sequi aperiam fugit totam. Quis cum voluptates esse itaque officia
+            quibusdam nemo architecto.
+          </p>
+          <h4>Imagen</h4>
+          <div class="col-6 mb-3">
+            <div class="box">
+              <!-- imagen -->
+            </div>
+          </div>
+          <h4>Botones</h4>
+          <div class="d-flex gap-3 mb-3">
+            <button class="btn btn-primary">Botón 1</button>
+            <button class="btn btn-danger">Botón 2</button>
+            <button class="btn btn-warning" id="boton3">Botón 3</button>
+          </div>
+          <h4>Formularios</h4>
+          <div class="col-6">
+            <form>
+              <div class="mb-3">
+                <label for="input1" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="input1" />
+              </div>
+              <div class="mb-3">
+                <label for="input2" class="form-label">Correo</label>
+                <input type="email" class="form-control" id="input2" />
+              </div>
+              <div class="mb-3">
+                <label for="input3" class="form-label">Comisión</label>
+                <input type="text" class="form-control" id="input3" />
+              </div>
+              <div class="mb-3">
+                <label for="input4" class="form-label">Mensaje</label>
+                <textarea class="form-control" id="input4" rows="3"></textarea>
+              </div>
+              <div class="mb-3 d-flex justify-content-end">
+                <button class="btn btn-success">Guardar</button>
+              </div>
+            </form>
+          </div>
+          <h4>Tablas</h4>
+          <div class="mb-3">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Correo</th>
+                  <th>Comisión</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Celdas con datos de las personas  -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    ​
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    ​
+    <script src="./js/app.js"></script>
+  </body>
+</html>
