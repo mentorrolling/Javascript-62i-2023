@@ -35,20 +35,30 @@
             quibusdam nemo architecto.
           </p>
           <h4>Imagen</h4>
-          <div class="col-6 mb-3">
+          <div class="col-12 col-md-6 mb-3">
             <div class="box">
               <!-- imagen -->
             </div>
           </div>
           <h4>Botones</h4>
           <div class="d-flex gap-3 mb-3">
-            <button class="btn btn-primary">Botón 1</button>
-            <button class="btn btn-danger">Botón 2</button>
-            <button class="btn btn-warning" id="boton3">Botón 3</button>
+            <button class="btn btn-primary" onclick="mostrarAlerta()">
+              Botón 1
+            </button>
+            <button class="btn btn-danger" onclick="cambiarImagen()">
+              Animar imagen
+            </button>
+            <button
+              class="btn btn-warning"
+              id="boton3"
+              onclick="cambiarEstiloBoton()"
+            >
+              Botón 3
+            </button>
           </div>
           <h4>Formularios</h4>
           <div class="col-6">
-            <form>
+            <form onsubmit="guardarDatos(event)">
               <div class="mb-3">
                 <label for="input1" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="input1" />

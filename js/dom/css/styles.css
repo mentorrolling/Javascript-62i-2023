@@ -1,3 +1,6 @@
+body {
+  background-color: rgb(237, 235, 234);
+}
 .box {
   border: 1px solid rgb(48, 48, 48);
   width: 100%;
