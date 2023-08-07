@@ -86,7 +86,11 @@ class Alumno {
   }
 }
 
-const alumnos = [];
+//si hay algo en localstorage que lo garde o arreglo vacio
+const alumnos = JSON.parse(localStorage.getItem("alumnos")) || [];
+
+// localStorage.removeItem('alumnos') //borras la clave alumnos
+// localStorage.clear() //borras todo
 
 let nombre = document.querySelector("#input1");
 let correo = document.querySelector("#input2");
@@ -103,6 +107,65 @@ const guardarDatos = (event) => {
     mensaje.value
   );
   alumnos.push(alumno);
+  //Guardar en localStorage
+  localStorage.setItem("alumnos", JSON.stringify(alumnos));
+
   document.querySelector("form").reset();
   nombre.focus();
+
+  cargarTabla();
 };
+
+//Tabla
+let cuerpoTabla = document.querySelector("tbody"); //contenedor de los datos de la tabla
+const myModal = new bootstrap.Modal(document.getElementById("updateModal"));
+
+const cargarTabla = () => {
+  cuerpoTabla.innerHTML = "";
+  //recorrer el arreglo de alumnos
+  //por cada alumno
+  //crear una fila
+  //crear celdas con los datos del usuario
+  //agregar esos datos al contenedor
+  alumnos.map((alumno, index) => {
+    let fila = document.createElement("tr"); //<tr><td></td></tr>
+    let celdas = `<td>${alumno.nombre}</td>
+  <td>${alumno.correo}</td>
+  <td>${alumno.comision}</td>
+  <td>
+  <button class="btn btn-danger btn-sm" onclick="borrarAlumno(${index})">X</button>
+  <button class="btn btn-warning btn-sm" onclick="mostrarModal(${index})">M</button>
+  </td>`;
+    fila.innerHTML = celdas;
+
+    cuerpoTabla.append(fila);
+  });
+};
+
+const borrarAlumno = (index) => {
+  let validar = confirm(
+    `Está seguro que quiere eliminar a ${alumnos[index].nombre}`
+  );
+  if (validar) {
+    alumnos.splice(index, 1);
+    localStorage.setItem("alumnos", JSON.stringify(alumnos));
+    alert("El registro fue eliminado");
+    cargarTabla();
+  }
+};
+
+const mostrarModal = (index) => {
+  document.querySelector("#inputModal1").value = alumnos[index].nombre;
+  document.querySelector("#inputModal2").value = alumnos[index].correo;
+  document.querySelector("#inputModal3").value = alumnos[index].comision;
+  document.querySelector("#inputModal4").value = alumnos[index].mensaje;
+  myModal.show();
+};
+
+cargarTabla();
+
+//CRUD:
+//CREATE*
+//READ*
+//UPDATE
+//DELETE*
