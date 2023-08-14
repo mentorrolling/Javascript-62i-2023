@@ -1,3 +1,5 @@
+// import { Alumno } from "./clases.js";
+
 let parrafo1 = document.getElementById("parrafo1");
 let parrafo2 = document.querySelector("#parrafo2");
 
@@ -77,14 +79,6 @@ const cambiarEstiloBoton = () => {
 };
 
 //formularios
-class Alumno {
-  constructor(nombre, correo, comision, mensaje = "") {
-    this.nombre = nombre;
-    this.correo = correo;
-    this.comision = comision;
-    this.mensaje = mensaje;
-  }
-}
 
 //si hay algo en localstorage que lo garde o arreglo vacio
 const alumnos = JSON.parse(localStorage.getItem("alumnos")) || [];
@@ -154,12 +148,35 @@ const borrarAlumno = (index) => {
   }
 };
 
+let posicionAlumno = null; //variable para almacenar la posición del alumno a modificar
+
 const mostrarModal = (index) => {
   document.querySelector("#inputModal1").value = alumnos[index].nombre;
   document.querySelector("#inputModal2").value = alumnos[index].correo;
   document.querySelector("#inputModal3").value = alumnos[index].comision;
   document.querySelector("#inputModal4").value = alumnos[index].mensaje;
+  posicionAlumno = index;
   myModal.show();
+};
+
+const actualizarAlumno = (event) => {
+  event.preventDefault();
+
+  //tomar los datos de los imputs
+  //asignarlos en el registro que corresponde
+
+  alumnos[posicionAlumno].nombre = document.getElementById("inputModal1").value;
+  alumnos[posicionAlumno].correo = document.getElementById("inputModal2").value;
+  alumnos[posicionAlumno].comision =
+    document.getElementById("inputModal3").value;
+  alumnos[posicionAlumno].mensaje =
+    document.getElementById("inputModal4").value;
+  //guardar en la BD
+  localStorage.setItem("alumnos", JSON.stringify(alumnos));
+  //cerrar el modal
+  myModal.hide();
+  //actualizar la tabla
+  cargarTabla();
 };
 
 cargarTabla();
